@@ -36,11 +36,131 @@ Publish the website in the given URL.
 
 ## PROGRAM :
 
---include your code--
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Application</title>
+    <style>
+        .maincontainer{
+            text-align: center;
+            background-color: orange;
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        body{
+            background-color: mediumturquoise;
+        }
+        .canvas{
+            background-color: rgb(48, 151, 23);
+        }
+    </style>
+
+<script type="text/javascript">
+var shape;
+var color;
+function myClickEvent(e){
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        if(color==1){
+            ctx.strokeStyle='red';
+        }else if(color==2){
+            ctx.strokeStyle='yellow';
+        }else if(color==3){
+            ctx.strokeStyle='blue';
+        }
+        if(shape == 0){
+            ctx.arc(e.offsetX,e.offsetY, 45, 0, 2 * Math.PI);
+            ctx.stroke();
+            
+        }else if(shape == 1){
+
+            ctx.moveTo(100, 100);
+            ctx.lineTo(100, 300);
+            ctx.lineTo(300, 300);
+            ctx.closePath();
+            ctx.stroke();
+            
+            
+            context.closePath()
+        }else if(shape==2){
+            ctx.rect(e.offsetX,e.offsetY, 150, 100);
+            ctx.stroke();
+
+
+        }else if(shape==3){
+            ctx.rect(e.offsetX, e.offsetY, 50, 50);
+            ctx.stroke();
+        }
+    }
+
+        function circleClicked(){
+            shape=0;
+        }
+        function triangleClicked(){
+            shape=1;
+        }
+        function rectangleClicked(){
+            shape=2;
+        }
+        function squareClicked(){
+            shape=3;
+        }
+        function redClicked(){
+            color=1;
+        }
+        function blueClicked(){
+            color=3;
+        }
+        function yellowClicked(){
+            color=2;
+        }
+
+</script>
+</head>
+<body>
+    <div class="maincontainer">
+        <h1><u>Canvas Drawing Application</u></h1>
+    <canvas class="canvas" id="myCanvas" width="800" height="400" style="border:1px solid #000000"></canvas>
+    <div>
+        <input type="button" id="circle" value="Circle">
+        <input type="button" id="line" value="Triangle">
+        <input type="button" id="rectangle" value="Rectangle">
+        <input type="button" id="square" value="Square">
+        
+    </div>
+    <div>
+        <input type="button" id="red" value="Red">
+        <input type="button" id="blue" value="Blue">
+        <input type="button" id="yellow" value="Yellow">
+    </div>
+    <footer>
+        Developed by Dorigundla Vishnu vardhan reddy.
+    </footer>
+        <script type ="text/javascript">
+            var c = document.getElementById("myCanvas");
+            c.addEventListener("click", myClickEvent);
+            document.getElementById("circle").addEventListener("click", circleClicked);
+            document.getElementById("line").addEventListener("click",  triangleClicked);
+            document.getElementById("rectangle").addEventListener("click",rectangleClicked);
+            document.getElementById("square").addEventListener("click",squareClicked);
+            document.getElementById("red").addEventListener("click",redClicked);
+            document.getElementById("blue").addEventListener("click",blueClicked);
+            document.getElementById("yellow").addEventListener("click",yellowClicked);
+           
+        </script>
+</body>
+</html>
+
+```
 
 ## OUTPUT:
 
--- include your output screenshots ---
+![OUTPUT](/drawing/paint.png)
 
 ## Result:
 
